@@ -9,12 +9,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { PokemonComponent } from './component/pokemon/pokemon.component';
 import { DialogComponent } from './component/dialog/dialog.component';
+import { AlturaPesoPipe } from './pipes/altura-peso.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     PokemonComponent,
-    DialogComponent
+    DialogComponent,
+    AlturaPesoPipe
   ],
   imports: [
     BrowserModule,

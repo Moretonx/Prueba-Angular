@@ -3,11 +3,11 @@
   <div *ngIf="dialog">
     <mat-toolbar color="primary" (click)="openDialog()">
       <img class="imagen" mat-card-image src="{{pokemonImagen}}" alt="imagen del Pokemon">
-      <span class="span">{{pokemon.name}}</span>
+      <span class="span">{{pokemon.name | uppercase}}</span>
       <h4>
         Tipo: {{pokemonTipo}} 
-        Altura: {{pokemon.height}} 
-        Peso: {{pokemon.weight}}
+        Altura: {{pokemon.height | alturaPeso}} m
+        Peso: {{pokemon.weight | alturaPeso}} kg
     </h4>
     </mat-toolbar>
   </div>
@@ -43,7 +43,7 @@
     <div *ngIf="detalles">
       <mat-card class="card">
         <mat-card-header>
-          <mat-card-title>{{pokemon.name}}</mat-card-title>
+          <mat-card-title>{{pokemon.name | uppercase}}</mat-card-title>
           <mat-card-subtitle>N° {{pokemon.id}}</mat-card-subtitle>
           <mat-card-actions>
             <button class="favorito" mat-button (click)="favorito()">
@@ -55,8 +55,8 @@
         <mat-card-content>
           <mat-chip-set>
             <mat-chip color="primary">Tipo: {{pokemonTipo}}</mat-chip>
-            <mat-chip color="primary">Altura: {{pokemon.height}}</mat-chip>
-            <mat-chip color="primary">Peso: {{pokemon.weight}}</mat-chip>
+            <mat-chip color="primary">Altura: {{pokemon.height | alturaPeso}} m</mat-chip>
+            <mat-chip color="primary">Peso: {{pokemon.weight | alturaPeso}} kg</mat-chip>
           </mat-chip-set>
         </mat-card-content>
       </mat-card>

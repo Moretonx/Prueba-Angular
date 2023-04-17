@@ -1,8 +1,8 @@
-<h1 mat-dialog-title>{{data.nombre}}</h1>
+<h1 mat-dialog-title>{{data.nombre | uppercase}}</h1>
 <img src="{{data.imagen}}" alt="">
 <div mat-dialog-content>Tipo: {{data.tipo}}</div>
-<div mat-dialog-content>Altura: {{data.altura}}</div>
-<div mat-dialog-content>Peso: {{data.peso}}</div>
+<div mat-dialog-content>Altura: {{data.altura | alturaPeso}} m</div>
+<div mat-dialog-content>Peso: {{data.peso | alturaPeso}} kg</div>
 <div mat-dialog-actions>
     <button mat-button mat-dialog-close>Cerrar</button>
 </div>
