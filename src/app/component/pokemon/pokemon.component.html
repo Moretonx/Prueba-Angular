@@ -2,7 +2,7 @@
 
   <div *ngIf="dialog">
     <mat-toolbar color="primary" (click)="openDialog()">
-      <img class="imagen" mat-card-image src="{{pokemonImagen}}" alt="imagen del Pokemon">
+      <img class="imagen" mat-card-image src="{{pokemonImagen2}}" alt="imagen del Pokemon">
       <span class="span">{{pokemon.name | uppercase}}</span>
       <h4>
         Tipo: {{pokemonTipo}} 
@@ -61,6 +61,12 @@
         </mat-card-content>
       </mat-card>
     </div>
+
+    <div *ngIf="!detalles">
+        <img class="imagen" mat-card-image src="assets/img/pokemon.png" alt="imagen del Pokemon">
+        <h1 style="text-align: center; color: #0a21a5d2;">¡Elige tu Pokemon! </h1>
+    </div>
+
     <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Seleccione número de elementos"></mat-paginator>
 
   </div>

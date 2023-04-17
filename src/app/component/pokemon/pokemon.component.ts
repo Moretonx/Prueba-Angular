@@ -21,6 +21,7 @@ export class PokemonComponent implements OnInit {
   pokemon: any='';
   pokemonTipo = [];
   pokemonImagen = '';
+  pokemonImagen2 = '';
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -63,7 +64,8 @@ export class PokemonComponent implements OnInit {
       res => {
         this.pokemon = res;
         this.pokemonTipo = res.types[0].type.name;
-        this.pokemonImagen = this.pokemon.sprites.front_default;
+        this.pokemonImagen = this.pokemon.sprites.other.dream_world.front_default;
+        this.pokemonImagen2 = this.pokemon.sprites.front_default;
         this.detalles = true;
       },
       err => console.log(err)
@@ -77,7 +79,7 @@ export class PokemonComponent implements OnInit {
   openDialog() {
     this.pokemonService.openDialog({
       nombre: this.pokemon.name,
-      imagen: this.pokemonImagen,
+      imagen: this.pokemonImagen2,
       tipo: this.pokemonTipo,
       altura: this.pokemon.height,
       peso: this.pokemon.weight
